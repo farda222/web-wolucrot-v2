@@ -24,7 +24,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`font-custom shadow-md transition-all duration-300 ease-in-out fixed w-full px-20 py-7 border-b-[0.5px] border-solid border-neutral-500  z-50 lg:border-none lg:px-20 2xl:px-0 ${isNavbarTransparent ? "bg-transparent" : "bg-white"}`}>
+    <nav className={`font-custom shadow-md transition-all duration-300 ease-in-out fixed w-full px-5 py-7 border-b-[0.5px] border-solid border-neutral-500  z-50 lg:border-none lg:px-20 2xl:px-0 ${isNavbarTransparent ? "bg-transparent" : "bg-white"}`}>
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center">
           <button onClick={toggleMobileMenu} className={`-ml-3 md:hidden text-black focus:outline-none ${isNavbarTransparent ? "text-black" : "text-gray-800"}`}>
