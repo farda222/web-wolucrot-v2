@@ -5,6 +5,7 @@ import Component2 from "../assets/img/Component-3.svg";
 import Component4 from "../assets/img/Component-4.svg";
 import Hero from "../assets/img/Component-2.svg";
 import Cardslide from "./Cardslider.jsx";
+import Eclipse from '../assets/img/Ellipse-7.png'
 const HeroSection = () => {
   const data = [
     { title: "Card 1", description: "Description 1" },
@@ -15,8 +16,8 @@ const HeroSection = () => {
     { title: "Card 6", description: "Description 6" },
   ];
   return (
-    <>
-      <div className="w-[200px] h-[200px] bg-indigo-600 rounded-full blur-[90px] absolute -ml-32 z-0 mt-10 lg:-ml-24 lg:-mt-12" />
+    <div className="overflow-x-hidden">
+      <div className="w-[200px] h-[200px] bg-indigo-600 rounded-full blur-[90px] absolute -ml-32 z-0 mt-10 lg:-ml-24 lg:-mt-12 overflow-x-hidden" />
       <div className="hero-section text-black z-40 font-custom overflow-x-hidden justify-center items-center align-middle container mx-auto px-4 overflow-y-hidden lg:px-16 2xl:px-20 lg:font-custom">
         <h1 className="w-[95%] text-neutral-900 text-[2rem] font-bold leading-10 2xl:text-4xl overflow-y-hidden lg:text-4xl z-50">DISCOVER THE EASE OF LEARNING</h1>
         <p className="w-full text-2xl font-semibold mt-3 lg:w-full lg:text-neutral-900 2xl:text-4xl lg:font-semibold 2xl:tracking-[0.4rem] lg:tracking-[0.4rem] lg:text-3xl z-50">
@@ -41,9 +42,10 @@ const HeroSection = () => {
         <a href="https://www.youtube.com/shorts/KaEnm860dHI" className="bg-white shadow-lg shadow-neutral-200 text-xs font-medium px-5 py-4 flex hover:shadow-none transition-all w-fit lg:px-8 lg:py-5 lg:text-sm lg:-mt-10 duration-500">
           <img className="w-3 h-3 mt-[1.7px] mr-4 lg:w-4 lg:h-4" src={Play}></img>Watch Video
         </a>
-        <div className="w-[200px] h-[200px] bg-indigo-600 rounded-full blur-[95px] absolute -mt-72 ml-72 z-0 lg:-mt-[63rem] lg:ml-[72rem] 2xl:ml-[93rem] 2xl:-mt-[75rem] lg:blur-[50px] 2xl:blur-[50px]" />
+        <img className="absolute -mt-96 ml-[10.5rem]" src={Eclipse}></img>
+        <div className="w-[200px] h-[200px] bg-indigo-600 rounded-full blur-[95px] absolute -mt-72 ml-40 z-0 lg:-mt-[63rem] lg:ml-[72rem] 2xl:ml-[93rem] 2xl:-mt-[75rem] lg:blur-[50px] 2xl:blur-[50px] hidden lg:block 2xl:block" />
         <div className="flex items-center align-middle justify-center container mx-auto mt-20 gap-4 w-full lg:gap-54 lg:ml-20 z-50">
-          <img src={Component2} className="w-36 -mt-10 lg:w-[65%] lg:float-start lg:mr-[10rem] z-0"></img>
+          <img src={Component2} className="w-36 -mt-10 lg:w-[65%] lg:float-start lg:mr-[10rem] z-50"></img>
           <div>
             <h1 className="text-[11px] w-full font-semibold lg:text-3xl">
               WHAT IS <span className="text-indigo-600">WOLU</span> <span className="text-yellow-500">CLASSROOM</span> ?
@@ -75,7 +77,7 @@ const HeroSection = () => {
           <a className="text-sm border-[0.5px] border-solid border-indigo-600 text-indigo-600 px-8 py-3 rounded-sm hover:bg-indigo-600 hover:text-white transition-all mt-7 absolute lg:mt-56 lg:ml-20 2xl:mt-60 2xl:ml-24">Read More</a>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
