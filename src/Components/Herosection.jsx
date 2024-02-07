@@ -42,7 +42,7 @@ const HeroSection = () => {
         <a href="https://www.youtube.com/shorts/KaEnm860dHI" className="bg-white shadow-lg shadow-neutral-200 text-xs font-medium px-5 py-4 flex hover:shadow-none transition-all w-fit lg:px-8 lg:py-5 lg:text-sm lg:-mt-10 duration-500">
           <img className="w-3 h-3 mt-[1.7px] mr-4 lg:w-4 lg:h-4" src={Play}></img>Watch Video
         </a>
-        <img className="absolute -mt-96 ml-[10rem] lg:hidden 2xl:hidden" src={Eclipse}></img>
+        <img className="absolute -mt-96 ml-[9.5rem] lg:hidden 2xl:hidden" src={Eclipse}></img>
         <div className="w-[200px] h-[200px] bg-indigo-600 rounded-full blur-[95px] absolute -mt-72 ml-40 z-0 lg:-mt-[63rem] lg:ml-[72rem] 2xl:ml-[93rem] 2xl:-mt-[75rem] lg:blur-[50px] 2xl:blur-[50px] hidden lg:block 2xl:block" />
         <div className="flex items-center align-middle justify-center container mx-auto mt-20 gap-4 w-full lg:gap-54 lg:ml-20 z-50">
           <img src={Component2} className="w-36 -mt-10 lg:w-[65%] lg:float-start lg:mr-[10rem] z-50"></img>
