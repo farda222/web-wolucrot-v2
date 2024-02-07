@@ -2,6 +2,9 @@
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
+*::-webkit-scrollbar {
+  display: none;
+}
 #carousel::-webkit-scrollbar {
  display: none;
 }
