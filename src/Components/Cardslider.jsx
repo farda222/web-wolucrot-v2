@@ -12,7 +12,7 @@ function CardSlider() {
             data-tilt>
             <img className="mb-3 bg-indigo-600 rounded-md px-[0.9rem] py-[0.9rem] lg:py-[1rem] lg:px-[1rem] lg:w-[3.7rem] lg:rounded-xl" src={Conference} />
             <h1 className="mb-2 lg:text-lg lg:mt-5">Quiz</h1>
-            <p className="w-40 lg:text-base lg:font-normal lg:w-56 lg:mt-5 opacity-70 text-[10px]">Managing exams and assessment converence</p>
+            <p className="w-40 lg:text-base lg:font-normal lg:w-56 lg:mt-5 opacity-60 text-[10.5px]">Managing exams and assessment converence</p>
           </div>
           <div
             id="Card-head"
@@ -27,7 +27,7 @@ function CardSlider() {
               </svg>
             </div>
             <h1 className="mb-2 lg:text-lg lg:mt-5">Forum</h1>
-            <p className="lg:text-base lg:font-normal lg:w-56 lg:mt-5 opacity-70 text-[10px]">Ask anything to the teacher in real-time.</p>
+            <p className="lg:text-base lg:font-normal lg:w-56 lg:mt-5 opacity-60 text-[10.5px]">Ask anything to the teacher in real-time.</p>
           </div>
           <div
             id="Card-head"
@@ -41,7 +41,7 @@ function CardSlider() {
               </svg>
             </div>
             <h1 className="mb-2 lg:text-lg lg:mt-5">Live Class</h1>
-            <p className="lg:text-base lg:font-normal lg:w-56 lg:mt-5 opacity-70 text-[10px]">Direct interaction with teachers and students.</p>
+            <p className="lg:text-base lg:font-normal lg:w-56 lg:mt-5 opacity-60 text-[10.5px]">Direct interaction with teachers and students.</p>
           </div>
           <div
             id="Card-head"
@@ -55,7 +55,7 @@ function CardSlider() {
               </svg>
             </div>
             <h1 className="mb-2 lg:text-lg lg:mt-5">Teacher & Student</h1>
-            <p className="lg:text-base lg:font-normal lg:w-56 lg:mt-5 opacity-70 text-[10px]">Teachers and students in one tap.</p>
+            <p className="lg:text-base lg:font-normal lg:w-56 lg:mt-5 opacity-60 text-[10.5px]">Teachers and students in one tap.</p>
           </div>
         </div>
       </div>
