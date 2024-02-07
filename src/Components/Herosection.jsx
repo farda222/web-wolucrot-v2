@@ -43,7 +43,7 @@ const HeroSection = () => {
         </a>
         <div className="w-[200px] h-[200px] bg-indigo-600 rounded-full blur-[95px] absolute -mt-72 ml-72 z-0 lg:-mt-[63rem] lg:ml-[72rem] 2xl:ml-[93rem] 2xl:-mt-[75rem] lg:blur-[50px] 2xl:blur-[50px]" />
         <div className="flex items-center align-middle justify-center container mx-auto mt-20 gap-4 w-full lg:gap-54 lg:ml-20 z-50">
-          <img src={Component2} className="w-36 -mt-10 lg:w-[65%] lg:float-start lg:mr-[10rem] z-50"></img>
+          <img src={Component2} className="w-36 -mt-10 lg:w-[65%] lg:float-start lg:mr-[10rem] z-0"></img>
           <div>
             <h1 className="text-[11px] w-full font-semibold lg:text-3xl">
               WHAT IS <span className="text-indigo-600">WOLU</span> <span className="text-yellow-500">CLASSROOM</span> ?
