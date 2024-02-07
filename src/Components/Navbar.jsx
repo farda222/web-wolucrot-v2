@@ -1,6 +1,6 @@
 // Navbar.js
 import { useState, useEffect } from "react";
-import Logo from "../assets/img/Logo.png";
+import Logo from "../assets/img/Logo.svg";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -32,7 +32,7 @@ const Navbar = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M4 6h16M4 12h16m-7 6h7"></path>
             </svg>
           </button>
-          <img className="ml-7 lg:w-5" src={Logo} />
+          <img className="w-5 ml-7 lg:w-5" src={Logo} />
           <a href="/" className={`lg:hidden ml-5 text-lg flex gap-3 font-semibold ${isNavbarTransparent ? "text-black" : "text-gray-800"}`}>
             WOLU
           </a>
