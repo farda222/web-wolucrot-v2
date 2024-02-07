@@ -5,7 +5,7 @@ function CardSlider() {
   return (
     <>
       <div data-aos="fade-out" data-aos-duration="1000" data-aos-delay="600" className="container flex justify-center align-middle sm:mx-auto md:mx-auto lg:mx-auto 2xl:mx-auto mb-20">
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 2xl:gap-20 2xl:mt-10 lg:mt-10">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 2xl:gap-10 2xl:mt-10 lg:mt-10">
           <div
             id="Card-head"
             className="w-40 h-40 bg-white border-2 border-neutral-400 border-solid rounded-md hover:border-2 overflow-y-hidden hover:bg-indigo-600 hover:text-white transition-all px-3 pt-6 text-black text-xs lg:text-base font-semibold 2xl:w-72 2xl:h-72 2xl:pt-14 2xl:px-9 lg:w-64 lg:h-64 lg:pt-10 lg:px-5"
