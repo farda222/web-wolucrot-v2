@@ -5,8 +5,10 @@ import Component2 from "../assets/img/Component-3.svg";
 import Component4 from "../assets/img/Component-4.svg";
 import Hero from "../assets/img/Component-2.svg";
 import Cardslide from "./Cardslider.jsx";
-import Eclipse from '../assets/img/Ellipse-7.png'
+import Eclipse from "../assets/img/Ellipse-7.png";
+import { useNavigate } from "react-router-dom";
 const HeroSection = () => {
+  const navigate = useNavigate();
   const data = [
     { title: "Card 1", description: "Description 1" },
     { title: "Card 2", description: "Description 2" },
@@ -18,7 +20,7 @@ const HeroSection = () => {
   return (
     <div className="overflow-x-hidden">
       <div className="w-[200px] h-[200px] bg-indigo-600 rounded-full blur-[90px] absolute -ml-32 z-0 mt-10 lg:-ml-24 lg:-mt-12 overflow-x-hidden" />
-      <div className="hero-section text-black z-40 font-custom overflow-x-hidden justify-center items-center align-middle container mx-auto px-4 overflow-y-hidden lg:px-16 2xl:px-20 lg:font-custom">
+      <div className="hero-section text-black z-40 font-custom overflow-x-hidden justify-center items-center align-middle container mx-auto px-4 overflow-y-hidden lg:px-16 2xl:px-14 lg:font-custom">
         <h1 className="w-[95%] text-neutral-900 text-[2rem] font-bold leading-10 2xl:text-4xl overflow-y-hidden lg:text-4xl z-50">DISCOVER THE EASE OF LEARNING</h1>
         <p className="w-full text-2xl font-semibold mt-3 lg:w-full lg:text-neutral-900 2xl:text-4xl lg:font-semibold 2xl:tracking-[0.4rem] lg:tracking-[0.4rem] lg:text-3xl z-50">
           ONLINE WITH
@@ -28,7 +30,7 @@ const HeroSection = () => {
 
         <p className="w-[350px] text-neutral-900 text-lg font-normal mt-3 lg:w-full lg:mt-10 2xl:w-full 2xl:mt-10">Simple. powerful. and fast—the key to a highly efficient online learning experience.</p>
         <div className="lg:flex mt-5 lg:gap-5">
-          <button className="bg-indigo-600 text-white w-full py-4 text-sm font-medium mt-3 rounded-md hover:bg-indigo-700 transition-all 2xl:h-fit 2xl:mt-10 2xl:w-56 lg:h-fit lg:mt-10 lg:w-56">
+          <button onClick={() => navigate("/Wolu")} className="bg-indigo-600 text-white w-full py-4 text-sm font-medium mt-3 rounded-md hover:bg-indigo-700 transition-all 2xl:h-fit 2xl:mt-10 2xl:w-56 lg:h-fit lg:mt-10 lg:w-56">
             <a>Get Started</a>
           </button>
           <button className="bg-white text-indigo-600 border-[0.5px] border-solid border-indigo-600 w-full py-4 text-sm font-medium mt-3 rounded-md hover:bg-indigo-600 hover:text-white transition-all 2xl:h-fit 2xl:mt-10 2xl:w-56 lg:h-fit lg:mt-10 lg:w-56">
