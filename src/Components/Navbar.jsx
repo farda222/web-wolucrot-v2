@@ -1,10 +1,12 @@
 // Navbar.js
 import { useState, useEffect } from "react";
 import Logo from "../assets/img/Logo.svg";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isNavbarTransparent, setIsNavbarTransparent] = useState(true);
+  const navigate = useNavigate();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -24,7 +26,10 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`font-custom overflow-x-hidden shadow-md transition-all duration-300 ease-in-out fixed w-full px-5 py-7 border-b-[0.5px] border-solid border-neutral-500  z-50 lg:border-none lg:px-20 2xl:px-0 ${isNavbarTransparent ? "bg-transparent" : "bg-white"}`}>
+    <nav
+      className={`font-custom overflow-x-hidden shadow-md transition-all duration-300 ease-in-out fixed w-full px-5 py-7 border-b-[0.5px] border-solid border-neutral-500  z-50 lg:border-none lg:px-20 2xl:px-0 ${
+        isNavbarTransparent ? "bg-transparent" : "bg-white"
+      }`}>
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center">
           <button onClick={toggleMobileMenu} className={`-ml-3 md:hidden text-black focus:outline-none ${isNavbarTransparent ? "text-black" : "text-gray-800"}`}>
@@ -55,10 +60,10 @@ const Navbar = () => {
           </a>
         </div>
         <div className="hidden md:flex items-center space-x-4 lg:hidden">
-          <a href="/signup" className={`hover:text-gray-300 ${isNavbarTransparent ? "text-black" : "text-gray-800"}`}>
+          <a onClick={() => navigate("/Wolu")} href="/signup" className={`hover:text-gray-300 ${isNavbarTransparent ? "text-black" : "text-gray-800"}`}>
             Sign Up
           </a>
-          <a href="/login" className={`hover:text-gray-300 ${isNavbarTransparent ? "text-black" : "text-gray-800"}`}>
+          <a onClick={() => navigate("/LoginWolu")} href="/login" className={`hover:text-gray-300 ${isNavbarTransparent ? "text-black" : "text-gray-800"}`}>
             Login
           </a>
         </div>
@@ -103,11 +108,13 @@ const Navbar = () => {
                 Contact
               </a>
               <a
+                onClick={() => navigate("/Wolu")}
                 href="/signup"
                 className={`text-black text-center bg-white border-2 border-solid border-indigo-500 w-[70%] rounded-full mt-5 hover:bg-indigo-500 hover:text-white transition-all p-4 ${isNavbarTransparent ? "text-black" : "text-gray-800"}`}>
                 Sign Up
               </a>
               <a
+                onClick={() => navigate("/LoginWolu")}
                 href="/login"
                 className={`text-black text-center bg-white border-2 border-solid border-indigo-500 w-[70%] rounded-full mt-5 hover:bg-indigo-500 hover:text-white transition-all p-4 ${isNavbarTransparent ? "text-black" : "text-gray-800"}`}>
                 Login
@@ -116,8 +123,12 @@ const Navbar = () => {
           </div>
         )}
         <div className="flex gap-4">
-          <button className={"bg-indigo-600 text-white px-6 py-3 font-medium"}>Login</button>
-          <button className={"bg-white text-indigo-600 border-2 border-solid border-indigo-600 px-6 py-[0.6rem] font-medium hidden lg:block"}>Sign Up</button>
+          <button className={"bg-indigo-600 text-white px-6 py-3 font-medium"} onClick={() => navigate("/LoginWolu")}>
+            Login
+          </button>
+          <button className={"bg-white text-indigo-600 border-2 border-solid border-indigo-600 px-6 py-[0.6rem] font-medium hidden lg:block"} onClick={() => navigate("/Wolu")}>
+            Sign Up
+          </button>
         </div>
       </div>
     </nav>
