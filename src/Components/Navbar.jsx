@@ -70,7 +70,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Overlay */}
         {isMobileMenuOpen && (
-          <div className="md:hidden fixed inset-0 bg-white z-50 transition-all">
+          <div className="md:hidden fixed inset-0 bg-white z-50 transition-all overflow-y-hidden">
             <div className="flex justify-start p-6">
               <button onClick={toggleMobileMenu} className={`text-black focus:outline-none ${isNavbarTransparent ? "text-black" : "text-gray-800 float-start"}`}>
                 <svg className="h-6 w-6 float-start" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
