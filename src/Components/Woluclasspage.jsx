@@ -1,15 +1,12 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import Logo from "../assets/img/Logo.svg";
-import { useNavigate } from "react-router-dom";
-import Google from "../assets/img/Google.svg";
 
 const SignUpPage = ({ onNavigateToLogin }) => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordStrength, setPasswordStrength] = useState("");
-  const navigate = useNavigate();
 
   const handlePasswordChange = (e) => {
     const newPassword = e.target.value;
@@ -30,7 +27,7 @@ const SignUpPage = ({ onNavigateToLogin }) => {
       // Jika ada input yang belum diisi atau password tidak memenuhi persyaratan
       alert("Semua kolom harus diisi dan password minimal 8 karakter");
     } else {
-      // Jika formulir valid, maka navigasi ke halaman login
+      // Jika formulir valid, maka panggil fungsi yang diberikan oleh parent
       onNavigateToLogin();
     }
   };
@@ -92,23 +89,6 @@ const SignUpPage = ({ onNavigateToLogin }) => {
             onClick={handleNext}>
             Next
           </button>
-        </div>
-        <div className="flex items-center justify-center align-middle mx-auto gap-2 container mt-4">
-          <div className="w-20 h-[0.2px] bg-black"></div>
-          <p className="text-xs">Or With</p>
-          <div className="w-20 h-[0.2px] bg-black"></div>
-        </div>
-        <div className="flex items-center justify-center align-middle mx-auto gap-5 container mt-4">
-          <button className="bg-neutral-200 font-bold text-xs w-28 h-10 rounded-md flex items-center justify-center align-middle gap-2 container">
-            <img src={Google} alt="Google" />
-            Google
-          </button>
-        </div>
-        <div className="mt-6 text-center text-xs">
-          Already have an account?{" "}
-          <a onClick={() => navigate("/LoginWolu")} href="#login" className="text-blue-500">
-            Login now
-          </a>
         </div>
       </form>
     </div>
