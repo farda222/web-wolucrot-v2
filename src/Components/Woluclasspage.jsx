@@ -36,7 +36,7 @@ const SignUpPage = ({ onNavigateToLogin }) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-fit bg-gray-400 px-4 font-custom overflow-y-hidden">
+    <div className="flex flex-col items-center justify-center h-auto bg-gray-400 px-4 font-custom overflow-y-hidden">
       <form className="bg-white shadow-md rounded-xl px-8 pt-6 pb-8 w-full max-w-md overflow-hidden mt-1">
         <div className="mb-3 flex justify-center mt-2">
           <img src={Logo} alt="Logo" className="h-8 w-auto" />
