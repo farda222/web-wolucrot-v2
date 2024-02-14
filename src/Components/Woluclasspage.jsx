@@ -126,7 +126,7 @@ const AuthPage = () => {
     setIsSignUp(false);
   };
 
-  return <>{isSignUp ? <SignUpPage onNavigateToLogin={handleNavigateToLogin} /> : <LoginPage />}</>;
+  return <SignUpPage onNavigateToLogin={handleNavigateToLogin} />;
 };
 
 export default AuthPage;
