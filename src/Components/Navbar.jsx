@@ -107,18 +107,6 @@ const Navbar = () => {
                 }`}>
                 Contact
               </a>
-              <a
-                onClick={() => navigate("/Wolu")}
-                href="/signup"
-                className={`text-black text-center bg-white border-2 border-solid border-indigo-500 w-[70%] rounded-full mt-5 hover:bg-indigo-500 hover:text-white transition-all p-4 ${isNavbarTransparent ? "text-black" : "text-gray-800"}`}>
-                Sign Up
-              </a>
-              <a
-                onClick={() => navigate("/LoginWolu")}
-                href="/login"
-                className={`text-black text-center bg-white border-2 border-solid border-indigo-500 w-[70%] rounded-full mt-5 hover:bg-indigo-500 hover:text-white transition-all p-4 ${isNavbarTransparent ? "text-black" : "text-gray-800"}`}>
-                Login
-              </a>
             </div>
           </div>
         )}
