@@ -60,7 +60,7 @@ const SignUpPage = ({ onNavigateToLogin }) => {
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-xs font-bold mb-2" htmlFor="username">
-            Username
+            Fullname
           </label>
           <input
             className="bg-neutral-200 appearance-none border rounded w-full py-3 px-4 text-black font-bold text-xs leading-tight focus:outline-none focus:shadow-outline"
