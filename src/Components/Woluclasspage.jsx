@@ -60,7 +60,7 @@ const SignUpPage = ({ onNavigateToLogin }) => {
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-xs font-bold mb-2" htmlFor="username">
-            Fullname
+            Username
           </label>
           <input
             className="bg-neutral-200 appearance-none border rounded w-full py-3 px-4 text-black font-bold text-xs leading-tight focus:outline-none focus:shadow-outline"
@@ -123,6 +123,7 @@ const LoginPage = ({ onLogin }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [selectedOption, setSelectedOption] = useState("student");
 
   const handleLogin = () => {
     if (!username || !password) {
@@ -171,9 +172,13 @@ const LoginPage = ({ onLogin }) => {
             </label>
           </div>
         </div>
-        <div className="flex justify-center container align-middle items-center mx-auto gap-7">
-          <button className="px-4 py-2 bg-neutral-200 hover:bg-indigo-600 font-semibold hover:text-white text-sm transition-all">Student</button>
-          <button className="px-4 py-2 bg-neutral-200 hover:bg-indigo-600 font-semibold hover:text-white text-sm transition-all">Teacher</button>
+        <div className="flex items-center justify-center align-middle mx-auto gap-10 container">
+          <button className={`px-6 py-3 hover:bg-neutral-300 transition-all text-xs ${selectedOption === "student" ? "bg-indigo-600 text-white" : "bg-gray-200 text-gray-700"}`} onClick={() => setSelectedOption("student")}>
+            Student
+          </button>
+          <button className={`px-6 py-3 hover:bg-neutral-300 transition-all text-xs ${selectedOption === "teacher" ? "bg-indigo-600 text-white" : "bg-gray-200 text-gray-700"}`} onClick={() => setSelectedOption("teacher")}>
+            Teacher
+          </button>
         </div>
         {error && <p className="text-red-500 mb-2 text-sm text-center">{error}</p>}
         <div className="flex items-center justify-center mt-7">
