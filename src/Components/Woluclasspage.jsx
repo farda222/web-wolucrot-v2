@@ -100,7 +100,7 @@ const SignUpPage = ({ onNavigateToLogin }) => {
         </div>
         <div className="flex items-center justify-center align-middle mx-auto gap-5 container mt-4">
           <button className="bg-neutral-200 font-bold text-xs w-28 h-10 rounded-md flex items-center justify-center align-middle gap-2 container">
-            <img src={Google} />
+            <img src={Google} alt="Google" />
             Google
           </button>
         </div>
@@ -119,14 +119,4 @@ SignUpPage.propTypes = {
   onNavigateToLogin: PropTypes.func.isRequired,
 };
 
-const AuthPage = () => {
-  const [isSignUp, setIsSignUp] = useState(true);
-
-  const handleNavigateToLogin = () => {
-    setIsSignUp(false);
-  };
-
-  return <SignUpPage onNavigateToLogin={handleNavigateToLogin} />;
-};
-
-export default AuthPage;
+export default SignUpPage;
