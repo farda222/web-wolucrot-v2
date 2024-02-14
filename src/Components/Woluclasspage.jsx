@@ -119,100 +119,6 @@ SignUpPage.propTypes = {
   onNavigateToLogin: PropTypes.func.isRequired,
 };
 
-const LoginPage = ({ onLogin }) => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [selectedOption, setSelectedOption] = useState(null);
-
-  const handleClick = (option) => {
-    setSelectedOption(option);
-  };
-
-  const handleLogin = () => {
-    if (!username || !password) {
-      setError("Semua kolom harus diisi");
-      setTimeout(() => setError(""), 3000); // Menghapus pesan kesalahan setelah 3 detik
-    } else {
-      onLogin({ username, password });
-    }
-  };
-
-  return (
-    <form className="flex flex-col items-center justify-center h-screen bg-gray-400 font-custom px-4 py-2 overflow-y-hidden">
-      <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-md mt-4">
-        <div className="mb-3 flex justify-center mt-2">
-          <img src={Logo} alt="Logo" className="h-8 w-auto" />
-        </div>
-        <p className="justify-center align-middle container mx-auto text-center flex text-xs font-extrabold text-black mb-4">WOLU</p>
-        <h2 className="text-xl mb-6 text-center font-bold">
-          Sign Up To <span className="text-indigo-600">Wolu</span> <span className="text-yellow-500">Class</span>
-        </h2>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-xs font-bold mb-2" htmlFor="username">
-            Username
-          </label>
-          <input
-            className="bg-neutral-200 appearance-none border rounded w-full py-3 px-4 text-black font-bold text-xs leading-tight focus:outline-none focus:shadow-outline"
-            id="username"
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div className="mb-6">
-          <label className="block text-gray-700 text-xs font-bold mb-2" htmlFor="password">
-            NIS
-          </label>
-          <input
-            className="bg-neutral-200 appearance-none border rounded w-full py-3 px-4 text-black font-bold text-xs leading-tight focus:outline-none focus:shadow-outline"
-            id="password"
-            type="number"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <div className="mt-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="privacy-policy">
-              <input className="mr-2 leading-tight" type="checkbox" id="privacy-policy" required />I agree to the privacy policy and terms of use of this site.
-            </label>
-          </div>
-        </div>
-        <div className="flex items-center justify-center align-middle mx-auto gap-10 container">
-          <label className={`relative flex items-center ${selectedOption === "student" ? "bg-indigo-600 text-white" : "bg-gray-200 text-gray-700"} transition-all duration-300`}>
-            <input type="radio" name="role" defaultValue="student" className="absolute opacity-0" onClick={() => handleClick("student")} />
-            <span className="px-6 py-3 rounded-full cursor-pointer select-none text-xs font-semibold">Student</span>
-          </label>
-          <label className={`relative flex items-center ${selectedOption === "teacher" ? "bg-indigo-600 text-white" : "bg-gray-200 text-gray-700"} transition-all duration-300`}>
-            <input type="radio" name="role" defaultValue="teacher" className="absolute opacity-0" onClick={() => handleClick("teacher")} />
-            <span className="px-6 py-3 rounded-full cursor-pointer select-none text-xs font-semibold">Teacher</span>
-          </label>
-        </div>
-        {error && <p className="text-red-500 mb-2 text-sm text-center">{error}</p>}
-        <div className="flex items-center justify-center mt-7">
-          <button className="bg-indigo-600 hover:bg-indigo-800 transition-all text-white py-3 px-24 text-sm rounded-lg focus:outline-none focus:shadow-outline" type="button" onClick={handleLogin}>
-            Register
-          </button>
-        </div>
-        <div className="flex items-center justify-center align-middle mx-auto gap-2 container mt-6">
-          <div className="w-20 h-[0.2px] bg-black"></div>
-          <p className="text-xs">Or With</p>
-          <div className="w-20 h-[0.2px] bg-black"></div>
-        </div>
-        <div className="flex items-center justify-center align-middle mx-auto gap-5 container mt-6">
-          <button className="bg-neutral-200 font-bold text-xs w-28 h-10 rounded-md flex items-center justify-center align-middle gap-2 container">
-            <img src={Google} />
-            Google
-          </button>
-        </div>
-      </div>
-    </form>
-  );
-};
-
-LoginPage.propTypes = {
-  onLogin: PropTypes.func.isRequired,
-};
-
 const AuthPage = () => {
   const [isSignUp, setIsSignUp] = useState(true);
 
@@ -220,12 +126,7 @@ const AuthPage = () => {
     setIsSignUp(false);
   };
 
-  const handleLogin = (data) => {
-    console.log("Login data:", data);
-    // Proses autentikasi login di sini
-  };
-
-  return <>{isSignUp ? <SignUpPage onNavigateToLogin={handleNavigateToLogin} /> : <LoginPage onLogin={handleLogin} />}</>;
+  return <>{isSignUp ? <SignUpPage onNavigateToLogin={handleNavigateToLogin} /> : <LoginPage />}</>;
 };
 
 export default AuthPage;
