@@ -60,7 +60,7 @@ const SignUpPage = ({ onNavigateToLogin }) => {
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-xs font-bold mb-2" htmlFor="username">
-            Fullname
+            Username
           </label>
           <input
             className="bg-neutral-200 appearance-none border rounded w-full py-3 px-4 text-black font-bold text-xs leading-tight focus:outline-none focus:shadow-outline"
@@ -163,6 +163,7 @@ const LoginPage = ({ onLogin }) => {
           <input
             className="bg-neutral-200 appearance-none border rounded w-full py-3 px-4 text-black font-bold text-xs leading-tight focus:outline-none focus:shadow-outline"
             id="password"
+            type="number"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -173,10 +174,10 @@ const LoginPage = ({ onLogin }) => {
           </div>
         </div>
         <div className="flex items-center justify-center align-middle mx-auto gap-10 container">
-          <button className={`px-6 py-3 hover:bg-neutral-300 transition-all text-xs ${selectedOption === "student" ? "bg-indigo-600 text-white" : "bg-gray-200 text-gray-700"}`} onClick={() => setSelectedOption("student")}>
+          <button className={`px-6 py-3 transition-all text-xs ${selectedOption === "student" ? "bg-indigo-600 text-white" : "bg-gray-200 text-gray-700"}`} onClick={() => setSelectedOption("student")}>
             Student
           </button>
-          <button className={`px-6 py-3 hover:bg-neutral-300 transition-all text-xs ${selectedOption === "teacher" ? "bg-indigo-600 text-white" : "bg-gray-200 text-gray-700"}`} onClick={() => setSelectedOption("teacher")}>
+          <button className={`px-6 py-3 transition-all text-xs ${selectedOption === "teacher" ? "bg-indigo-600 text-white" : "bg-gray-200 text-gray-700"}`} onClick={() => setSelectedOption("teacher")}>
             Teacher
           </button>
         </div>
