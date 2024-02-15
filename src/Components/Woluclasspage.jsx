@@ -123,7 +123,11 @@ const LoginPage = ({ onLogin }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [selectedOption, setSelectedOption] = useState(null);
 
+  const handleClick = (option) => {
+    setSelectedOption(option);
+  };
 
   const handleLogin = () => {
     if (!username || !password) {
@@ -174,12 +178,12 @@ const LoginPage = ({ onLogin }) => {
           </div>
         </div>
         <div className="flex items-center justify-center align-middle mx-auto gap-10 container">
-          <label className={`relative flex items-center hover:bg-indigo-600 hover:text-white bg-gray-200 text-gray-700 transition-all duration-300`}>
-            <input type="radio" name="role" defaultValue="student" className="absolute opacity-0"/>
+          <label className={`relative flex items-center ${selectedOption === "student" ? "bg-indigo-600 text-white" : "bg-gray-200 text-gray-700"} transition-all duration-300`}>
+            <input type="radio" name="role" defaultValue="student" className="absolute opacity-0" onClick={() => handleClick("student")} />
             <span className="px-6 py-3 rounded-full cursor-pointer select-none text-xs font-semibold">Student</span>
           </label>
-          <label className={`relative flex items-center hover:bg-indigo-600 hover:text-white bg-gray-200 text-gray-700 transition-all duration-300`}>
-            <input type="radio" name="role" defaultValue="teacher" className="absolute opacity-0"/>
+          <label className={`relative flex items-center ${selectedOption === "teacher" ? "bg-indigo-600 text-white" : "bg-gray-200 text-gray-700"} transition-all duration-300`}>
+            <input type="radio" name="role" defaultValue="teacher" className="absolute opacity-0" onClick={() => handleClick("teacher")} />
             <span className="px-6 py-3 rounded-full cursor-pointer select-none text-xs font-semibold">Teacher</span>
           </label>
         </div>
@@ -210,9 +214,18 @@ LoginPage.propTypes = {
 };
 
 const AuthPage = () => {
+  const [isSignUp, setIsSignUp] = useState(true);
 
+  const handleNavigateToLogin = () => {
+    setIsSignUp(false);
+  };
 
-  return <><SignUpPage /> <LoginPage /></>;
+  const handleLogin = (data) => {
+    console.log("Login data:", data);
+    // Proses autentikasi login di sini
+  };
+
+  return <>{isSignUp ? <SignUpPage onNavigateToLogin={handleNavigateToLogin} /> : <LoginPage onLogin={handleLogin} />}</>;
 };
 
 export default AuthPage;

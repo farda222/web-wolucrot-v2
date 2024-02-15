@@ -10,7 +10,7 @@ const Footer = () => {
         </h2>
       </div>
 
-      <div className="flex items-center justify-center container mx-auto mb-4 gap-7 mt-14 lg:gap-48 lg:ml-20 2xl:gap-60 2xl:ml-48">
+      <div className="flex items-center justify-center container mx-auto mb-4 gap-7 mt-14 lg:gap-48 lg:ml-36 2xl:gap-60 2xl:ml-72">
         <nav className="text-sm font-semibold lg:text-xl">
           Menu
           <ul className="mt-3 text-sm font-normal lg:text-lg">
