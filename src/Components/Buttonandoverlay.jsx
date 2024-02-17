@@ -69,7 +69,7 @@ function App() {
           {classes.map((classItem, index) => (
             <div key={index} className={`bg-white rounded-xl shadow-md p-4 border-2 border-solid border-neutral-300 ${classes.length === 1 && index === 0 ? "mt-20" : ""}`}>
               {classItem.background && <img src={classItem.background} alt="Background" className="w-full h-28 object-cover flex mb-2 rounded-t-lg z-10" />}
-              <img id="iconaccount" className="w-16 h-16 rounded-full float-end ml-[11rem] z-0 -mt-12 flex border-4 border-white border-solid" src={Icon}></img>
+              <img id="iconaccount" className="w-16 h-16 rounded-full float-end ml-[11rem] z-0 -mt-12 flex border-4 border-white border-solid z-40" src={Icon}></img>
               <h1 className="text-2xl font-bold mb-2 mt-11">{classItem.name}</h1>
               <p className="text-sm text-gray-600 mb-2">0 Member</p>
               <Menu as="div" className="relative inline-block text-left">
