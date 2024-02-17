@@ -19,9 +19,9 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="max-w-[1640px] mx-auto flex justify-between items-center p-4 shadow-sm transition-all border-b-[0.1px] border-neutral-500 border-solid mb-0 font-custom z-50">
+    <div className="max-w-[1640px] mx-auto flex justify-between items-center p-4 shadow-sm transition-all border-b-[0.1px] border-neutral-500 border-solid mb-0 font-custom">
       {/* Left side */}
-      <div className="flex items-center p-3">
+      <div className="flex items-center p-3 z-50">
         <div onClick={() => setNav(!nav)} className="cursor-pointer">
           <AiOutlineMenu size={20} />
         </div>
