@@ -124,6 +124,7 @@ const LoginPage = ({ onLogin }) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [selectedOption, setSelectedOption] = useState(null);
+  const navigate = useNavigate(); // Gunakan useNavigate untuk navigasi
 
   const handleClick = (option) => {
     setSelectedOption(option);
@@ -135,6 +136,13 @@ const LoginPage = ({ onLogin }) => {
       setTimeout(() => setError(""), 3000); // Menghapus pesan kesalahan setelah 3 detik
     } else {
       onLogin({ username, password });
+
+      // Navigasi berdasarkan opsi radio yang dipilih
+      if (selectedOption === "student") {
+        navigate("/StudentPage"); // Navigasi ke halaman student
+      } else if (selectedOption === "teacher") {
+        navigate("/TeacherPage"); // Navigasi ke halaman teacher
+      }
     }
   };
 
