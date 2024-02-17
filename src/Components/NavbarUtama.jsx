@@ -19,9 +19,9 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="max-w-[1640px] mx-auto flex justify-between items-center p-4 shadow-sm transition-all border-b-[0.1px] border-neutral-500 border-solid mb-0 font-custom z-50">
+    <div className="max-w-full mx-auto flex justify-between items-center p-5 shadow-sm transition-all border-b-[0.1px] border-neutral-500 border-solid mb-0 font-custom z-50 w-full">
       {/* Left side */}
-      <div className="flex items-center p-3">
+      <div className="flex items-center">
         <div onClick={() => setNav(!nav)} className="cursor-pointer">
           <AiOutlineMenu size={20} />
         </div>
@@ -30,7 +30,7 @@ const Navbar = () => {
           Wolu
         </h1>
         <div>
-          <img className="w-10 rounded-full h-10 ml-44" src={Icon}></img>
+          <img className="w-10 rounded-full h-10 ml-40" src={Icon}></img>
         </div>
         <div className="hidden lg:flex items-center bg-gray-200 rounded-full p-1 text-[14px]">
           <p className="bg-black text-white rounded-full p-2">Delivery</p>

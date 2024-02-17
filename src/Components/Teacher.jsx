@@ -1,5 +1,5 @@
 import Sidebar from "../Components/NavbarUtama";
-import Circlebutton from "../Components/Buttonandoverlay";
+import Buttonandoverlay from "../Components/Buttonandoverlay";
 const Teacher = () => {
   return (
     <div className="h-full">
@@ -8,7 +8,7 @@ const Teacher = () => {
       </div>
 
       <div className="-mt-10">
-        <Circlebutton />
+        <Buttonandoverlay />
       </div>
     </div>
   );
