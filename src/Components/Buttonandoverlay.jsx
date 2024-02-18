@@ -1,19 +1,14 @@
 import { useState, useRef } from "react";
 import Icon from "../assets/img/Account.jpg";
-import { Fragment } from "react";
-import { Menu, Transition } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
 
 function App() {
   const [showOverlay, setShowOverlay] = useState(false);
+  const [openDropdownIndex, setOpenDropdownIndex] = useState(null); // New state to track which dropdown is open
   const [className, setClassName] = useState("");
   const [classDescription, setClassDescription] = useState("");
   const [background, setBackground] = useState("");
   const [classes, setClasses] = useState([]);
+  const [selectedClassIndex, setSelectedClassIndex] = useState(null);
   const inputFileRef = useRef(null);
 
   const handleButtonClick = () => {
@@ -57,79 +52,74 @@ function App() {
     reader.readAsDataURL(file);
   };
 
+// Toggle dropdown
+const toggleDropdown = (index) => {
+  setOpenDropdownIndex(openDropdownIndex === index ? null : index);
+  setSelectedClassIndex(index); // Save selected class index
+};
+
+
+  // Handle report class
+  const handleReportClass = () => {
+    console.log("Kelas dilaporkan");
+    setOpenDropdownIndex(null); // Close dropdown after action
+  };
+
+// Handle delete class
+const handleDeleteClass = () => {
+  if (selectedClassIndex !== null) {
+    const updatedClasses = [...classes];
+    updatedClasses.splice(selectedClassIndex, 1);
+    setClasses(updatedClasses);
+    setOpenDropdownIndex(null); // Close dropdown after action
+  }
+};
+
+
   return (
     <div className="flex flex-col items-center justify-center h-screen z-0 relative font-custom">
       <button className="fixed z-50 bottom-10 right-10 w-14 h-14 rounded-full bg-indigo-600 text-white flex items-center justify-center shadow-lg" onClick={handleButtonClick}>
         +
       </button>
 
-      {/* Menampilkan Kartu Kelas */}
-      <div className="h-full mt-14 z-0">
+      {/* Displaying Class Cards */}
+      <div className="h-full mt-14 z-0 overflow-x-hidden">
         <div className="w-72 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {classes.map((classItem, index) => (
-            <div key={index} className={`bg-white rounded-xl shadow-md p-4 border-2 border-solid border-neutral-300 ${classes.length === 1 && index === 0 ? "mt-20" : ""}`}>
-              {classItem.background && <img src={classItem.background} alt="Background" className="w-full h-28 object-cover flex mb-2 rounded-t-lg z-0" />}
-              <img className="h-14 w-14 rounded-full -mt-10 ml-44 z-50" src={Icon}></img>
-              <h1 className="text-2xl font-bold mb-2 -mt-1 -mr-20">{classItem.name}</h1>
-              <p className="text-sm text-gray-600 mb-2">0 Member</p>
-              <Menu as="div" className="relative inline-block text-left">
-                <div>
-                  <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-                    Options
-                    <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
-                  </Menu.Button>
-                </div>
+            <div key={index} className="relative">
+              <div className={`bg-white rounded-xl shadow-md p-4 border-2 border-solid border-neutral-300 ${classes.length === 1 && index === 0 ? "mt-20" : ""}`}>
+                {classItem.background && <img src={classItem.background} alt="Background" className="w-full h-28 object-cover flex mb-2 rounded-t-lg z-0" />}
+                <img className="h-14 w-14 rounded-full -mt-10 ml-44 z-50" src={Icon} alt="Icon" />
+                <h1 className="text-2xl font-bold mb-2 -mt-1 -mr-20">{classItem.name}</h1>
+                <p className="text-sm text-gray-600 mb-2">0 Member</p>
 
-                <Transition
-                  as={Fragment}
-                  enter="transition ease-out duration-100"
-                  enterFrom="transform opacity-0 scale-95"
-                  enterTo="transform opacity-100 scale-100"
-                  leave="transition ease-in duration-75"
-                  leaveFrom="transform opacity-100 scale-100"
-                  leaveTo="transform opacity-0 scale-95">
-                  <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <div className="py-1">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a href="#" className={classNames(active ? "bg-gray-100 text-gray-900" : "text-gray-700", "block px-4 py-2 text-sm")}>
-                            Account settings
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a href="#" className={classNames(active ? "bg-gray-100 text-gray-900" : "text-gray-700", "block px-4 py-2 text-sm")}>
-                            Support
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a href="#" className={classNames(active ? "bg-gray-100 text-gray-900" : "text-gray-700", "block px-4 py-2 text-sm")}>
-                            License
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <form method="POST" action="#">
-                        <Menu.Item>
-                          {({ active }) => (
-                            <button type="submit" className={classNames(active ? "bg-gray-100 text-gray-900" : "text-gray-700", "block w-full px-4 py-2 text-left text-sm")}>
-                              Sign out
-                            </button>
-                          )}
-                        </Menu.Item>
-                      </form>
+                {/* Dropdown toggle button */}
+                <button onClick={() => toggleDropdown(index)} className="absolute top-full right-0 -mt-14 mr-2 px-2 py-1 z-50" id="options-menu" aria-haspopup="true" aria-expanded={openDropdownIndex === index ? "true" : "false"}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24">
+                    <path fill="none" stroke="currentColor" strokeLinejoin="round" strokeWidth={3.75} d="M12 12h.01v.01H12zm0-7h.01v.01H12zm0 14h.01v.01H12z"></path>
+                  </svg>
+                </button>
+
+                {/* Dropdown menu */}
+                {openDropdownIndex === index && (
+                  <div className="absolute top-full right-0 -mt-24 mr-1 bg-white rounded-md shadow-lg z-50">
+                    <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                      <button onClick={handleReportClass} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 w-full text-left" role="menuitem">
+                        Laporkan
+                      </button>
+                      <button onClick={() => handleDeleteClass(index)} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 w-full text-left" role="menuitem">
+                        Hapus Kelas
+                      </button>
                     </div>
-                  </Menu.Items>
-                </Transition>
-              </Menu>
+                  </div>
+                )}
+              </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Overlay untuk Menambahkan Kelas */}
+      {/* Overlay to Add Class */}
       {showOverlay && (
         <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white w-11/12 md:w-2/3 rounded-md shadow-lg p-7">
