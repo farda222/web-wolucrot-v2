@@ -19,14 +19,14 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="max-w-full mx-auto flex justify-between items-center p-5 shadow-sm transition-all border-b-[0.1px] border-neutral-500 border-solid mb-0 font-custom z-50 w-full">
+    <div className="max-w-full mx-auto flex justify-between items-center p-5 shadow-sm transition-all border-b-[0.1px] border-neutral-500 border-solid mb-0 font-custom z-50 w-full font-Jakarta">
       {/* Left side */}
       <div className="flex items-center">
         <div onClick={() => setNav(!nav)} className="cursor-pointer">
           <AiOutlineMenu size={20} />
         </div>
-        <img className="w-4 ml-5" src={Logo}></img>
-        <h1 className="text-lg font-bold sm:text-3xl lg:text-4xl px-2">
+        <img className="w-4 ml-5 lg:w-6" src={Logo}></img>
+        <h1 className="text-lg font-bold sm:text-3xl lg:text-2xl lg:font-semibold px-2 font-custom">
           Wolu
         </h1>
         <div>

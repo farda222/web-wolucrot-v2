@@ -2,7 +2,7 @@
 import Logo from "../assets/img/Logo.png";
 const Footer = () => {
   return (
-    <footer className="bg-white text-black py-8 mt-36">
+    <footer className="bg-white text-black py-8 mt-36 font-Jakarta">
       <div className="text-center mb-4 flex mx-auto justify-center items-center container lg:float-start lg:-ml-[30rem] lg:mt-10 2xl:float-start 2xl:-ml-[35rem] 2xl:mt-10">
         <img src={Logo} alt="Logo" className="mr-4 lg:w-5 lg:mt-20" />
         <h2 className="text-lg font-bold text-yellow-500 lg:text-xl lg:mt-20">

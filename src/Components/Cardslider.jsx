@@ -4,7 +4,7 @@ import Conference from "../assets/img/Q.svg";
 function CardSlider() {
   return (
     <>
-      <div data-aos="fade-out" data-aos-duration="1000" data-aos-delay="600" className="container flex justify-center align-middle sm:mx-auto md:mx-auto lg:mx-auto 2xl:mx-auto mb-20">
+      <div data-aos="fade-out" data-aos-duration="1000" data-aos-delay="600" className="container flex justify-center align-middle sm:mx-auto md:mx-auto lg:mx-auto 2xl:mx-auto mb-20 font-Jakarta">
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-10 2xl:gap-10 2xl:mt-10 lg:mt-10">
           <div
             id="Card-head"

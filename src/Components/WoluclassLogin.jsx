@@ -5,7 +5,7 @@ const Login = () => {
   const navigate = useNavigate();
   return (
     <>
-      <form className="flex flex-col items-center justify-center h-screen bg-gray-400 font-custom px-4">
+      <form className="flex flex-col items-center justify-center h-screen bg-gray-400 font-custom px-4 font-Jakarta">
         <div className="bg-white shadow-md rounded-xl px-8 pt-6 pb-8 mb-4 w-full max-w-md mt-1">
           <div className="mb-3 flex justify-center mt-2">
             <img src={Logo} alt="Logo" className="h-8 w-auto" />

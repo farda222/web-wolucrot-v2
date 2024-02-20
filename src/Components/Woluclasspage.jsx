@@ -2,7 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import Logo from "../assets/img/Logo.svg";
 import { useNavigate } from "react-router-dom";
-import Google from "../assets/img/Google.svg";
+import Googlebutton from "../Components/Googlebutton";
 
 const SignUpPage = ({ onNavigateToLogin }) => {
   const [email, setEmail] = useState("");
@@ -36,7 +36,7 @@ const SignUpPage = ({ onNavigateToLogin }) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-400 px-4 font-custom overflow-y-hidden">
+    <div className="flex flex-col items-center justify-center h-screen bg-gray-400 px-4 font-custom overflow-y-hidden font-Jakarta">
       <form className="bg-white shadow-md rounded-xl px-8 pt-6 pb-8 w-full max-w-md overflow-hidden mt-1">
         <div className="mb-3 flex justify-center mt-2">
           <img src={Logo} alt="Logo" className="h-8 w-auto" />
@@ -99,10 +99,7 @@ const SignUpPage = ({ onNavigateToLogin }) => {
           <div className="w-20 h-[0.2px] bg-black"></div>
         </div>
         <div className="flex items-center justify-center align-middle mx-auto gap-5 container mt-4">
-          <button className="bg-neutral-200 font-bold text-xs w-28 h-10 rounded-md flex items-center justify-center align-middle gap-2 container">
-            <img src={Google} />
-            Google
-          </button>
+          <Googlebutton />
         </div>
         <div className="mt-6 text-center text-xs">
           Already have an account?{" "}
@@ -147,7 +144,7 @@ const LoginPage = ({ onLogin }) => {
   };
 
   return (
-    <form className="flex flex-col items-center justify-center h-screen bg-gray-400 font-custom px-4 py-2 overflow-y-hidden">
+    <form className="flex flex-col items-center justify-center h-screen bg-gray-400 font-custom px-4 py-2 overflow-y-hidden font-Jakarta">
       <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-md mt-4">
         <div className="mb-3 flex justify-center mt-2">
           <img src={Logo} alt="Logo" className="h-8 w-auto" />
@@ -207,10 +204,7 @@ const LoginPage = ({ onLogin }) => {
           <div className="w-20 h-[0.2px] bg-black"></div>
         </div>
         <div className="flex items-center justify-center align-middle mx-auto gap-5 container mt-6">
-          <button className="bg-neutral-200 font-bold text-xs w-28 h-10 rounded-md flex items-center justify-center align-middle gap-2 container">
-            <img src={Google} />
-            Google
-          </button>
+          <Googlebutton />
         </div>
       </div>
     </form>

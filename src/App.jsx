@@ -6,6 +6,7 @@ import Wolu from "./Pages/Woluclass";
 import Login from "./Pages/WoluLogin";
 import Teacher from "./Pages/Teacherpage";
 import Student from "./Pages/Studentpage";
+import Classdetail from "./Pages/Detailclasspage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/LoginWolu" element={<Login />}></Route>
         <Route path="/TeacherPage" element={<Teacher />}></Route>
         <Route path="/StudentPage" element={<Student />}></Route>
+        <Route path="/Yourclass" element={<Classdetail />}></Route>
       </Routes>
     </Router>
   );

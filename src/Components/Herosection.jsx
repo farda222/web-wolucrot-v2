@@ -18,7 +18,7 @@ const HeroSection = () => {
     { title: "Card 6", description: "Description 6" },
   ];
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden font-Jakarta">
       <div className="w-[200px] h-[200px] bg-indigo-600 rounded-full blur-[90px] absolute -ml-32 z-0 mt-10 lg:-ml-24 lg:-mt-12 overflow-x-hidden" />
       <div className="hero-section text-black z-40 font-custom overflow-x-hidden justify-center items-center align-middle container mx-auto px-4 overflow-y-hidden lg:px-16 2xl:px-14 lg:font-custom">
         <h1 className="w-[95%] text-neutral-900 text-[2rem] font-bold leading-10 2xl:text-4xl overflow-y-hidden lg:text-4xl z-50">DISCOVER THE EASE OF LEARNING</h1>

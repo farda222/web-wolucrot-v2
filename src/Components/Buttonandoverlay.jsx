@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import Icon from "../assets/img/Account.jpg";
+import { useNavigate } from "react-router-dom";
 
 function App() {
   const [showOverlay, setShowOverlay] = useState(false);
@@ -10,6 +11,7 @@ function App() {
   const [classes, setClasses] = useState([]);
   const [selectedClassIndex, setSelectedClassIndex] = useState(null);
   const inputFileRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleButtonClick = () => {
     setShowOverlay(true);
@@ -52,12 +54,11 @@ function App() {
     reader.readAsDataURL(file);
   };
 
-// Toggle dropdown
-const toggleDropdown = (index) => {
-  setOpenDropdownIndex(openDropdownIndex === index ? null : index);
-  setSelectedClassIndex(index); // Save selected class index
-};
-
+  // Toggle dropdown
+  const toggleDropdown = (index) => {
+    setOpenDropdownIndex(openDropdownIndex === index ? null : index);
+    setSelectedClassIndex(index); // Save selected class index
+  };
 
   // Handle report class
   const handleReportClass = () => {
@@ -65,19 +66,18 @@ const toggleDropdown = (index) => {
     setOpenDropdownIndex(null); // Close dropdown after action
   };
 
-// Handle delete class
-const handleDeleteClass = () => {
-  if (selectedClassIndex !== null) {
-    const updatedClasses = [...classes];
-    updatedClasses.splice(selectedClassIndex, 1);
-    setClasses(updatedClasses);
-    setOpenDropdownIndex(null); // Close dropdown after action
-  }
-};
-
+  // Handle delete class
+  const handleDeleteClass = () => {
+    if (selectedClassIndex !== null) {
+      const updatedClasses = [...classes];
+      updatedClasses.splice(selectedClassIndex, 1);
+      setClasses(updatedClasses);
+      setOpenDropdownIndex(null); // Close dropdown after action
+    }
+  };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen z-0 relative font-custom">
+    <div className="flex flex-col items-center justify-center h-screen z-0 relative font-custom font-Jakarta">
       <button className="fixed z-50 bottom-10 right-10 w-14 h-14 rounded-full bg-indigo-600 text-white flex items-center justify-center shadow-lg" onClick={handleButtonClick}>
         +
       </button>
@@ -90,7 +90,7 @@ const handleDeleteClass = () => {
               <div className={`bg-white rounded-xl shadow-md p-4 border-2 border-solid border-neutral-300 ${classes.length === 1 && index === 0 ? "mt-20" : ""}`}>
                 {classItem.background && <img src={classItem.background} alt="Background" className="w-full h-28 object-cover flex mb-2 rounded-t-lg z-0" />}
                 <img className="h-14 w-14 rounded-full -mt-10 ml-44 z-50" src={Icon} alt="Icon" />
-                <h1 className="text-2xl font-bold mb-2 -mt-1 -mr-20">{classItem.name}</h1>
+                <h1 onClick={() => navigate("/Yourclass")} className="text-2xl font-bold mb-2 -mt-1 -mr-20">{classItem.name}</h1>
                 <p className="text-sm text-gray-600 mb-2">0 Member</p>
 
                 {/* Dropdown toggle button */}
