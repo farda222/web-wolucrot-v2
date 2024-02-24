@@ -78,20 +78,24 @@ function App() {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen z-0 relative font-custom font-Jakarta">
-      <button className="fixed z-50 bottom-10 right-10 w-14 h-14 rounded-full bg-indigo-600 text-white flex items-center justify-center shadow-lg" onClick={handleButtonClick}>
-        +
+      <button
+        className="fixed z-50 bottom-10 right-10 w-14 h-14 lg:h-16 lg:w-[15rem] lg:rounded-md lg:bg-white lg:text-indigo-600 lg:shadow-none lg:border-2 lg:border-indigo-600 lg:border-solid lg:hover:bg-indigo-600 lg:hover:text-white transition-all rounded-full bg-indigo-600 text-white flex items-center justify-center shadow-lg"
+        onClick={handleButtonClick}>
+        <div className="hidden lg:block">Add Class</div> <div className="lg:hidden block">+</div>
       </button>
 
       {/* Displaying Class Cards */}
-      <div className="h-full mt-14 z-0 overflow-x-hidden">
-        <div className="w-72 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="h-full mt-14 z-0 overflow-x-hidden lg:mx-auto lg:h-full px-14">
+        <div className="w-72 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 lg:mx-auto lg:flex-row lg:align-middle lg:items-center lg:container">
           {classes.map((classItem, index) => (
             <div key={index} className="relative">
-              <div className={`bg-white rounded-xl shadow-md p-4 border-2 border-solid border-neutral-300 ${classes.length === 1 && index === 0 ? "mt-20" : ""}`}>
-                {classItem.background && <img src={classItem.background} alt="Background" className="w-full h-28 object-cover flex mb-2 rounded-t-lg z-0" />}
-                <img className="h-14 w-14 rounded-full -mt-10 ml-44 z-50" src={Icon} alt="Icon" />
-                <h1 onClick={() => navigate("/Yourclass")} className="text-2xl font-bold mb-2 -mt-1 -mr-20">{classItem.name}</h1>
-                <p className="text-sm text-gray-600 mb-2">0 Member</p>
+              <div className={`bg-white rounded-xl shadow-md p-4 border-2 border-solid lg:border-indigo-600 border-neutral-300 lg:w-[50rem] 2xl:w-[75rem] 2xl:h-[20rem] ${classes.length === 1 && index === 0 ? "mt-20" : ""}`}>
+                {classItem.background && <img src={classItem.background} alt="Background" className="w-full h-28 object-cover flex mb-2 rounded-t-lg z-0 2xl:h-40" />}
+                <img className="h-14 w-14 rounded-full -mt-10 ml-44 z-50 lg:ml-[42rem] 2xl:ml-[63rem] 2xl:w-20 2xl:h-20 2xl:-mt-11" src={Icon} alt="Icon" />
+                <h1 onClick={() => navigate("/Yourclass")} className="text-2xl font-bold mb-2 -mt-1 -mr-20 2xl:mt-0 2xl:text-3xl">
+                  {classItem.name}
+                </h1>
+                <p className="text-sm text-gray-600 mb-2 2xl:text-lg">0 Member</p>
 
                 {/* Dropdown toggle button */}
                 <button onClick={() => toggleDropdown(index)} className="absolute top-full right-0 -mt-14 mr-2 px-2 py-1 z-50" id="options-menu" aria-haspopup="true" aria-expanded={openDropdownIndex === index ? "true" : "false"}>
