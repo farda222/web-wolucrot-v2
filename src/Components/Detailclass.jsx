@@ -9,10 +9,10 @@ const Detail = () => {
   return (
     <div className="font-Jakarta">
       <Navbar/>
-      <nav className="bg-white p-4 px-12 mt-4 font-Jakarta lg:float-left">
-        <ul className="flex justify-between items-center lg:gap-14">
+      <nav className="bg-white p-4 px-12 py-7 font-Jakarta lg:float-left border-b-2 border-neutral-300 2xl:w-full">
+        <ul className="flex justify-between items-center lg:gap-14 2xl:gap-24 2xl:float-left">
           <li className="mr-2">
-            <a href="#" className="text-black hover:text-indigo-600 hover:border-b-4 hover:border-indigo-600 w-56 font-semibold transition-all">
+            <a href="#" className="text-indigo-600 hover:text-indigo-600 border-b-4 border-indigo-600 w-56 font-semibold transition-all">
               Task
             </a>
           </li>
@@ -33,7 +33,7 @@ const Detail = () => {
           </li>
         </ul>
       </nav>
-      <div className="flex justify-center align-middle items-center mx-auto container gap-6 mt-7 ml-1 font-Jakarta lg:mt-24">
+      <div className="flex justify-center align-middle items-center mx-auto container gap-6 mt-7 ml-1 font-Jakarta lg:mt-24 2xl:mt-32">
         <h1 className="text-black font-semibold text-2xl lg:text-3xl 2xl:ml-60">English XI PPLG 1</h1>
         <button className="text-white bg-indigo-600 w-16 h-7  font-semibold rounded-md text-xs lg:ml-[30rem] lg:w-20 lg:h-9 2xl:ml-[55rem]">Share</button>
         <div className="relative flex-row -ml-4">
