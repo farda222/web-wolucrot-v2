@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Icontask from "../assets/img/Icontask.svg"; // Import gambar
-
+import { useNavigate } from "react-router-dom";
 function TaskManager() {
   const [isOpen, setIsOpen] = useState(false);
   const [tasks, setTasks] = useState([]);
@@ -15,6 +15,7 @@ function TaskManager() {
 
   const [isLinkOverlayOpen, setIsLinkOverlayOpen] = useState(false);
   const [linkFormData, setLinkFormData] = useState("");
+  const navigate = useNavigate();
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -58,7 +59,7 @@ function TaskManager() {
   return (
     <div className="container mx-auto mt-8 font-Jakarta items-center align-middle flex-row">
       {tasks.map((task, index) => (
-        <div key={index} className="border rounded-lg p-4 mb-4 flex w-[23rem] items-center align-middle container mx-auto lg:w-[40rem] 2xl:w-[50rem]">
+        <div key={index} onClick={() => navigate("/Detailtask")} className="border rounded-lg p-4 mb-4 flex w-[23rem] items-center align-middle container mx-auto lg:w-[40rem] 2xl:w-[50rem]">
           <div className="mr-4 lg:mr-7">
             <img src={Icontask} alt="Task Icon" /> {/* Menampilkan gambar */}
           </div>
