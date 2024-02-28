@@ -121,7 +121,7 @@ function TaskManager() {
               </div>
               {/* Tombol untuk upload image */}
               <div className="mb-4">
-                <div className="flex items-center justify-between lg:float-left">
+                <div className="flex items-center justify-between lg:float-left gap-4">
                   <input type="file" id="image" name="image" className="hidden" />
                   <label htmlFor="image" className="bg-indigo-600 hover:bg-indigo-700 text-white py-4 px-8 rounded cursor-pointer text-xs">
                     Upload Image
