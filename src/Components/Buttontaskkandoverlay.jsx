@@ -123,10 +123,10 @@ function TaskManager() {
               <div className="mb-4">
                 <div className="flex items-center justify-between lg:float-left gap-4">
                   <input type="file" id="image" name="image" className="hidden" />
-                  <label htmlFor="image" className="bg-indigo-600 hover:bg-indigo-700 text-white py-4 px-8 rounded cursor-pointer text-xs">
+                  <label htmlFor="image" className="bg-indigo-600 hover:bg-indigo-700 text-white py-4 px-8 rounded cursor-pointer text-[9px]">
                     Upload Image
                   </label>
-                  <button type="button" onClick={() => setIsLinkOverlayOpen(true)} className="bg-indigo-600 hover:bg-indigo-700 text-white py-4 px-10 rounded cursor-pointer text-xs lg:ml-10">
+                  <button type="button" onClick={() => setIsLinkOverlayOpen(true)} className="bg-indigo-600 hover:bg-indigo-700 text-white py-4 px-10 rounded cursor-pointer text-[9px] lg:ml-10">
                     Paste Link
                   </button>
                 </div>
