@@ -1,14 +1,15 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import Logo from "../assets/img/Logo.svg";
 import { useNavigate } from "react-router-dom";
 import Googlebutton from "../Components/Googlebutton";
+import Logo from "../assets/img/Logo.svg";
 
 const SignUpPage = ({ onNavigateToLogin }) => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordStrength, setPasswordStrength] = useState("");
+  const [toastMessage, setToastMessage] = useState("");
   const navigate = useNavigate();
 
   const handlePasswordChange = (e) => {
@@ -25,19 +26,29 @@ const SignUpPage = ({ onNavigateToLogin }) => {
     }
   };
 
+  const showToast = (message) => {
+    setToastMessage(message);
+    setTimeout(() => {
+      setToastMessage("");
+    }, 3000);
+  };
+
   const handleNext = () => {
+    const emailRegex = /@gmail\.com$|@yahoo\.com$/;
+
     if (!email || !username || !password || password.length < 8) {
-      // Jika ada input yang belum diisi atau password tidak memenuhi persyaratan
-      alert("Semua kolom harus diisi dan password minimal 8 karakter");
+      showToast("Semua kolom harus diisi dan password minimal 8 karakter");
+    } else if (!emailRegex.test(email)) {
+      showToast("Email harus mengandung @gmail.com atau @yahoo.com");
     } else {
-      // Jika formulir valid, maka navigasi ke halaman login
       onNavigateToLogin();
     }
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-400 px-4 font-custom overflow-y-hidden font-Jakarta">
-      <form className="bg-white shadow-md rounded-xl px-8 pt-6 pb-8 w-full max-w-md overflow-hidden mt-1">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-400 px-4 font-custom font-Jakarta">
+      {toastMessage && <ToastMessage message={toastMessage} />}
+      <form className="bg-white shadow-md rounded-xl px-8 pt-6 pb-8 w-full max-w-md mt-1">
         <div className="mb-3 flex justify-center mt-2">
           <img src={Logo} alt="Logo" className="h-8 w-auto" />
         </div>
@@ -114,6 +125,20 @@ const SignUpPage = ({ onNavigateToLogin }) => {
 
 SignUpPage.propTypes = {
   onNavigateToLogin: PropTypes.func.isRequired,
+};
+
+const ToastMessage = ({ message }) => {
+  return (
+    <div className="fixed bottom-8 w-full px-4 md:px-0">
+      <div className="flex justify-center lg:float-right lg:mr-10">
+        <div className="bg-neutral-100 text-indigo-600 rounded shadow-lg md:bg-white p-5">{message}</div>
+      </div>
+    </div>
+  );
+};
+
+ToastMessage.propTypes = {
+  message: PropTypes.string.isRequired
 };
 
 const LoginPage = ({ onLogin }) => {
@@ -227,7 +252,9 @@ const AuthPage = () => {
     // Proses autentikasi login di sini
   };
 
-  return <>{isSignUp ? <SignUpPage onNavigateToLogin={handleNavigateToLogin} /> : <LoginPage onLogin={handleLogin} />}</>;
+  return (
+    <>{isSignUp ? <SignUpPage onNavigateToLogin={handleNavigateToLogin} /> : <LoginPage onLogin={handleLogin} />}</>
+  );
 };
 
 export default AuthPage;
