@@ -17,11 +17,11 @@ const StudentComponent = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="flex mb-4 ml-2 gap-20">
+      <div className="flex mb-4 ml-2 mx-auto container items-center align-middle justify-center">
         <button className={`mr-4 font-semibold py-2 px-4 text-sm ${activeTab === "submitted" ? "bg-white text-indigo-600 border-b-2 border-indigo-600 text-sm" : "bg-white"}`} onClick={() => setActiveTab("submitted")}>
           Submitted
         </button>
-        <button className={`mr-4 font-semibold py-2 px-4 text-sm ${activeTab === "unsubmitted" ? "bg-white text-indigo-600 border-b-2 border-indigo-600 text-sm" : "bg-white"}`} onClick={() => setActiveTab("unsubmitted")}>
+        <button className={`mr-4 font-semibold py-2 px-4 text-sm ml-20 ${activeTab === "unsubmitted" ? "bg-white text-indigo-600 border-b-2 border-indigo-600 text-sm" : "bg-white"}`} onClick={() => setActiveTab("unsubmitted")}>
           Unsubmitted
         </button>
       </div>
