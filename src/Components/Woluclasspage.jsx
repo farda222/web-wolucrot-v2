@@ -3,13 +3,14 @@ import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import Googlebutton from "../Components/Googlebutton";
 import Logo from "../assets/img/Logo.svg";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignUpPage = ({ onNavigateToLogin }) => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordStrength, setPasswordStrength] = useState("");
-  const [toastMessage, setToastMessage] = useState("");
   const navigate = useNavigate();
 
   const handlePasswordChange = (e) => {
@@ -27,10 +28,17 @@ const SignUpPage = ({ onNavigateToLogin }) => {
   };
 
   const showToast = (message) => {
-    setToastMessage(message);
-    setTimeout(() => {
-      setToastMessage("");
-    }, 3000);
+    toast.info(message, {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      bodyClassName: "toast-body",
+      className: "toast-container",
+    });
   };
 
   const handleNext = () => {
@@ -44,11 +52,12 @@ const SignUpPage = ({ onNavigateToLogin }) => {
       onNavigateToLogin();
     }
   };
+  
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-400 px-4 font-custom font-Jakarta">
-      {toastMessage && <ToastMessage message={toastMessage} />}
-      <form className="bg-white shadow-md rounded-xl px-8 pt-6 pb-8 w-full max-w-md mt-1">
+    <ToastContainer />
+    <form className="bg-white shadow-md rounded-xl px-8 pt-6 pb-8 w-full max-w-md mt-1">
         <div className="mb-3 flex justify-center mt-2">
           <img src={Logo} alt="Logo" className="h-8 w-auto" />
         </div>

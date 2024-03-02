@@ -8,6 +8,7 @@ import Teacher from "./Pages/Teacherpage";
 import Student from "./Pages/Studentpage";
 import Classdetail from "./Pages/Detailclasspage";
 import DetailTask from "./Pages/Detailtask";
+import Poinpageteacher from "./Pages/Point";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/StudentPage" element={<Student />}></Route>
         <Route path="/Yourclass" element={<Classdetail />}></Route>
         <Route path="/Detailtask" element={<DetailTask />}></Route>
+        <Route path="/Point" element={<Poinpageteacher />}></Route>
       </Routes>
     </Router>
   );

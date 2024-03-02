@@ -4,6 +4,8 @@ import Back from "../assets/img/mingcute_left-line.svg";
 import Cardimage from "../assets/img/Gambar-card.svg";
 import { useNavigate } from "react-router-dom";
 import Submit from "../Components/Studentsubmited";
+import Pdf from "../assets/img/Convert_PDF_2.svg";
+import Link from "../assets/img/Link_Chain.svg";
 
 const Detailtask = () => {
   const navigate = useNavigate();
@@ -31,10 +33,20 @@ const Detailtask = () => {
         <h1 className="mr-3 text-xs">Learn to read and listen to English</h1>
       </div>
       <div className="border-[1px] border-neutral-300 w-fit h-fit rounded-[8.87px] flex mx-auto container align-middle items-center justify-center gap-4 mt-4">
-        <img className="-ml-1 w-24" src={Cardimage}></img>
-        <h1 className="mr-3 text-xs">Learn to read and listen to English</h1>
+        <div className="p-6 px-7 bg-neutral-300">
+        <img className="w-5" src={Pdf}/>
+        </div>
+        <h1 className="mr-3 text-xs px-5">Click to download the file task</h1>
       </div>
-      <Submit/>
+      <div className="border-[1px] border-neutral-300 w-fit h-fit rounded-[8.87px] flex mx-auto container align-middle items-center justify-center gap-4 mt-4">
+        <div className="p-6 px-7 bg-neutral-300">
+          <img className="w-5" src={Link}/>
+        </div>
+        <a className="mr-3 text-xs text-indigo-600 px-7" href="https://www.adidas.com/us" target="_blank" rel="noopener noreferrer">
+          https://www.adidas.com...
+        </a>
+      </div>
+      <Submit />
     </div>
   );
 };
